@@ -28,7 +28,8 @@ WHERE `cfu` > 10;
 
 SELECT * 
 FROM `students`
-WHERE YEAR('2022-01-25') - YEAR(`date_of_birth`) > 30;
+WHERE DATEDIFF(CURRENT_DATE, `date_of_birth`) >= (30 * 365.25)  
+ORDER BY `students`.`date_of_birth` DESC;
 
 
 
